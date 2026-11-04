@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Buraq Holidays | Pilgrim Management</title>
+<style>
+:root{--navy:#102b43;--blue:#1b4965;--gold:#c79a45;--ink:#172635;--muted:#6d7b88;--line:#e4eaf0;--bg:#f4f7fa;--white:#fff;--green:#21845b;--red:#b54747}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 Inter,Segoe UI,Arial,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{max-width:1440px;margin:auto;padding:22px}.top{background:linear-gradient(115deg,#102b43,#1b4965);color:#fff;border-radius:18px;padding:18px 24px;display:flex;align-items:center;gap:18px;box-shadow:0 10px 30px #102b431c}.top img{width:70px;height:70px;object-fit:contain;background:#fff;border-radius:12px;padding:5px}.top h1{margin:0;font-size:22px;letter-spacing:.2px}.top p{margin:4px 0 0;color:#d8e4ec}.top .tag{margin-left:auto;border:1px solid #ffffff40;border-radius:30px;padding:8px 13px;color:#f4d99e;font-size:12px}.layout{display:grid;grid-template-columns:230px 1fr;gap:18px;margin-top:18px}.side,.panel{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 4px 18px #102b4308}.side{padding:12px;height:max-content;position:sticky;top:14px}.nav{width:100%;text-align:left;border:0;background:transparent;padding:12px;border-radius:10px;color:#526271;font-weight:600;margin:2px 0}.nav.active,.nav:hover{background:#edf3f7;color:var(--navy)}.nav small{display:block;font-weight:400;color:#8a97a2;margin-top:2px}.content{min-width:0}.panel{padding:22px;margin-bottom:16px}.heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}.heading h2{margin:0;font-size:19px;color:var(--navy)}.heading p{margin:4px 0 0;color:var(--muted);font-size:12px}.section-title{font-size:13px;text-transform:uppercase;letter-spacing:.8px;color:var(--blue);font-weight:800;border-bottom:1px solid var(--line);padding-bottom:8px;margin:22px 0 14px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.field{min-width:0}.field label{display:block;font-size:12px;color:#586877;font-weight:650;margin:0 0 6px}.field input,.field select,.field textarea{width:100%;border:1px solid #dce4eb;border-radius:9px;padding:10px 11px;background:#fff;color:var(--ink);outline:none;min-height:40px}.field input:focus,.field select:focus,.field textarea:focus{border-color:#6e9bb8;box-shadow:0 0 0 3px #1b496511}.field textarea{min-height:75px;resize:vertical}.span2{grid-column:span 2}.span3{grid-column:span 3}.btn{border:0;border-radius:9px;padding:10px 14px;font-weight:700}.primary{background:var(--navy);color:#fff}.gold{background:var(--gold);color:#fff}.light{background:#edf2f6;color:var(--navy)}.danger{background:#fff0f0;color:var(--red)}.btn-sm{padding:7px 10px;font-size:12px}.actions{display:flex;flex-wrap:wrap;gap:8px}.cardbox{border:1px solid var(--line);border-radius:13px;padding:15px;margin:12px 0;background:#fcfdfe}.cardhead{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}.cardhead strong{color:var(--navy)}.pill{font-size:11px;padding:4px 8px;border-radius:20px;background:#edf3f7;color:var(--blue)}.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:11px}table{width:100%;border-collapse:collapse;min-width:650px}th,td{text-align:left;padding:10px;border-bottom:1px solid var(--line);font-size:12px}th{background:#f5f8fa;color:#526271;font-weight:700}td input,td select{width:100%;border:1px solid #dce4eb;border-radius:7px;padding:8px;min-width:75px}.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat{padding:14px;border-radius:12px;background:#f3f7fa}.stat span{display:block;color:var(--muted);font-size:11px}.stat b{display:block;color:var(--navy);font-size:20px;margin-top:4px}.notice{background:#fff8e9;border:1px solid #f1dfb9;color:#795c27;padding:11px 13px;border-radius:10px;font-size:12px;margin:12px 0}.hidden{display:none!important}.record{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px;border-bottom:1px solid var(--line)}.record:last-child{border:0}.record b{display:block;color:var(--navy)}.muted{color:var(--muted);font-size:12px}.footer{text-align:center;color:#8b98a3;font-size:11px;padding:12px}
+#printArea{display:none}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.side{position:static;display:grid;grid-template-columns:repeat(3,1fr)}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.top .tag{display:none}}
+@media(max-width:560px){.app{padding:10px}.top{padding:14px}.top img{width:54px;height:54px}.top h1{font-size:17px}.panel{padding:15px}.grid{grid-template-columns:1fr}.span2,.span3{grid-column:span 1}.summary{grid-template-columns:1fr}.side{grid-template-columns:repeat(2,1fr)}}
+@media print{body{background:#fff}.app,.no-print{display:none!important}#printArea{display:block!important}}
+
+/* Premium glassmorphism refresh */
+:root{--navy:#102b43;--blue:#1b4965;--gold:#c79a45;--ink:#172635;--muted:#718096;--line:rgba(255,255,255,.62);--bg:#eaf0f6;--white:rgba(255,255,255,.76);--green:#21845b;--red:#b54747}
+body{background:radial-gradient(ellipse at 8% 4%,rgba(81,151,190,.22),transparent 34%),radial-gradient(ellipse at 92% 14%,rgba(199,154,69,.17),transparent 30%),linear-gradient(135deg,#eef3f8 0%,#e7edf4 48%,#f5f7fa 100%);background-attachment:fixed}
+.app{max-width:1480px;padding:26px}
+.top{background:linear-gradient(120deg,rgba(13,39,61,.94),rgba(27,73,101,.88));border:1px solid rgba(255,255,255,.2);border-radius:24px;box-shadow:0 18px 48px rgba(16,43,67,.2),inset 0 1px 0 rgba(255,255,255,.2);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);padding:20px 26px}
+.top img{border:1px solid rgba(255,255,255,.45);box-shadow:0 5px 18px #071b2b30}
+.layout{gap:20px;margin-top:20px}
+.side,.panel{background:rgba(255,255,255,.62);border:1px solid rgba(255,255,255,.82);box-shadow:0 12px 34px rgba(30,55,80,.08),inset 0 1px 0 rgba(255,255,255,.85);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
+.side{border-radius:20px;padding:13px}
+.nav{border:1px solid transparent;transition:all .22s ease;padding:13px}
+.nav.active,.nav:hover{background:linear-gradient(120deg,rgba(255,255,255,.9),rgba(226,238,247,.78));border-color:rgba(255,255,255,.9);color:var(--navy);box-shadow:0 5px 15px rgba(22,55,82,.07),inset 0 1px 0 #fff}
+.panel{border-radius:22px;padding:25px}
+.heading h2{letter-spacing:-.35px}
+.section-title{border-bottom-color:rgba(27,73,101,.15)}
+.field input,.field select,.field textarea,td input,td select{background:rgba(255,255,255,.76);border:1px solid rgba(177,194,208,.58);border-radius:11px;transition:all .2s ease;box-shadow:inset 0 1px 2px rgba(20,45,65,.025)}
+.field input:focus,.field select:focus,.field textarea:focus,td input:focus,td select:focus{background:rgba(255,255,255,.96);border-color:#6e9bb8;box-shadow:0 0 0 4px rgba(27,73,101,.09),0 5px 15px rgba(27,73,101,.06)}
+.btn{border-radius:11px;transition:transform .18s ease,box-shadow .18s ease,filter .18s ease}
+.btn:hover{transform:translateY(-1px);filter:brightness(1.04);box-shadow:0 7px 18px rgba(16,43,67,.13)}
+.primary{background:linear-gradient(135deg,#102b43,#245b7b);box-shadow:0 5px 14px rgba(16,43,67,.16)}
+.gold{background:linear-gradient(135deg,#b88734,#d5ad62);box-shadow:0 5px 14px rgba(180,132,48,.16)}
+.light{background:rgba(233,241,247,.88);border:1px solid rgba(255,255,255,.9)}
+.cardbox{background:rgba(255,255,255,.53);border:1px solid rgba(255,255,255,.86);border-radius:16px;box-shadow:0 7px 22px rgba(28,55,78,.045),inset 0 1px 0 #fff}
+.stat{background:linear-gradient(145deg,rgba(255,255,255,.82),rgba(232,240,247,.68));border:1px solid rgba(255,255,255,.88);border-radius:16px;box-shadow:0 7px 20px rgba(25,52,76,.055),inset 0 1px 0 #fff}
+.stat b{letter-spacing:-.5px}
+.tablewrap{border-color:rgba(255,255,255,.9);background:rgba(255,255,255,.45)}
+th{background:rgba(232,240,246,.9)}
+td{background:rgba(255,255,255,.36)}
+.pill{background:rgba(226,237,246,.9);border:1px solid rgba(255,255,255,.9)}
+.notice{background:rgba(255,248,233,.72);border-color:rgba(241,223,185,.85);backdrop-filter:blur(10px)}
+.footer{padding:18px}
+@media(max-width:900px){.app{padding:15px}.panel{padding:19px}}
+@media(max-width:560px){.app{padding:10px}.panel{padding:15px}.top{border-radius:18px}}
+
+</style><style>
+/* Buraq Holidays — refined premium glass interface */
+:root{--navy:#0b2438;--blue:#1d5876;--gold:#c99b4d;--ink:#152b3c;--muted:#718394;--line:rgba(255,255,255,.72);--bg:#eaf0f6}
+body{background:radial-gradient(ellipse at 12% 0%,rgba(77,151,190,.22),transparent 36%),radial-gradient(ellipse at 94% 18%,rgba(209,168,91,.19),transparent 28%),linear-gradient(135deg,#edf3f8 0%,#e4ebf2 50%,#f7f9fb 100%);background-attachment:fixed}
+.app{max-width:1540px;padding:30px}
+.top{position:relative;overflow:hidden;background:linear-gradient(115deg,rgba(8,32,51,.97),rgba(24,76,104,.91) 62%,rgba(36,91,112,.88));border:1px solid rgba(255,255,255,.25);border-radius:27px;padding:23px 30px;box-shadow:0 24px 60px rgba(13,42,64,.23),inset 0 1px 0 rgba(255,255,255,.22);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+.top:after{content:"";position:absolute;width:330px;height:330px;border:1px solid #ffffff18;border-radius:50%;right:7%;top:-230px;box-shadow:0 0 0 35px #ffffff08,0 0 0 70px #ffffff06;pointer-events:none}
+.top img{width:76px;height:76px;border-radius:19px;background:rgba(255,255,255,.96);padding:7px;box-shadow:0 9px 26px #061a2b55;border:1px solid #ffffff9c}
+.top h1{font-size:25px;letter-spacing:1.1px}.top p{font-size:12px;letter-spacing:.35px;color:#dceaf1}.top .tag{background:#ffffff10;backdrop-filter:blur(12px);border-color:#ffffff45;color:#f5d99e}
+.layout{grid-template-columns:248px minmax(0,1fr);gap:22px;margin-top:22px}
+.side,.panel{background:rgba(255,255,255,.64);border:1px solid rgba(255,255,255,.88);box-shadow:0 16px 42px rgba(22,48,69,.09),inset 0 1px 0 rgba(255,255,255,.85);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
+.side{padding:13px;border-radius:22px}.nav{padding:13px 14px;border:1px solid transparent;border-radius:13px;color:#52697a;transition:all .2s ease}.nav:hover{background:rgba(255,255,255,.76);border-color:#fff;transform:translateX(2px)}.nav.active{background:linear-gradient(120deg,rgba(19,64,91,.96),rgba(34,91,119,.91));color:white;box-shadow:0 8px 20px #123c582b}.nav.active small{color:#d9e8ef}
+.panel{border-radius:22px;padding:26px;margin-bottom:19px}.heading h2{font-size:21px;letter-spacing:-.35px}.heading p{font-size:12px}.section-title{color:#1c5876;border-bottom-color:#cbd8e2;margin-top:25px}
+.field input,.field select,.field textarea,td input,td select{background:rgba(255,255,255,.77);border:1px solid rgba(164,184,199,.55);border-radius:12px;box-shadow:inset 0 1px 2px rgba(20,50,70,.025);transition:border-color .18s,box-shadow .18s,background .18s}.field input:focus,.field select:focus,.field textarea:focus,td input:focus,td select:focus{background:#fff;border-color:#5b91ad;box-shadow:0 0 0 4px rgba(42,112,148,.12)}
+.btn{border-radius:12px;padding:11px 16px;transition:transform .18s,box-shadow .18s,filter .18s}.btn:hover{transform:translateY(-1px);filter:brightness(1.035);box-shadow:0 8px 18px rgba(20,49,69,.12)}.primary{background:linear-gradient(125deg,#102f49,#1e5876);box-shadow:0 6px 16px #123e5b26}.gold{background:linear-gradient(125deg,#b9893e,#d2aa62);box-shadow:0 6px 16px #b9893e24}.light{background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.9)}
+.cardbox,.stat{background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.9);border-radius:17px;box-shadow:0 8px 22px rgba(26,55,76,.045),inset 0 1px 0 #fff}.stat{padding:17px}.stat b{font-size:22px;letter-spacing:-.5px}.summary{gap:13px}.pill{background:rgba(32,91,120,.09);border:1px solid rgba(32,91,120,.12);padding:6px 10px}.notice{background:rgba(255,248,232,.78);border:1px solid rgba(227,193,128,.55);border-radius:13px}.tablewrap{border:1px solid rgba(255,255,255,.95);border-radius:15px;background:rgba(255,255,255,.48)}th{background:rgba(224,235,243,.72)}td{background:rgba(255,255,255,.24)}.footer{padding:18px;color:#8091a0}
+#tab-memory .cardbox{padding:19px}#tab-memory ul{padding-left:19px;line-height:1.9}#folderStatus{overflow-wrap:anywhere}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.side{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));position:static}.app{padding:16px}}
+@media(max-width:560px){.app{padding:9px}.top{padding:15px;border-radius:19px}.top img{width:55px;height:55px}.top h1{font-size:18px}.panel{padding:16px;border-radius:17px}.side{gap:4px}.nav{font-size:12px;padding:10px}.nav small{font-size:10px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top"><img id="brandLogo" src="data:image/png;base64,assets/logo.png" alt="Buraq Holidays"><div><h1>BURAQ HOLIDAYS</h1><p>Pilgrim Registration · Travel Management · Booking & Vouchers</p></div><div class="tag">ADMIN WORKSPACE</div></header>
+<div class="layout">
+<aside class="side no-print">
+<button class="nav active" data-tab="registration">01 · Registration<small>Pilgrim & family details</small></button>
+<button class="nav" data-tab="travel">02 · Travel & Hotels<small>Dates and day-wise stays</small></button>
+<button class="nav" data-tab="costs">03 · Cost & Payments<small>Admin expense calculator</small></button>
+<button class="nav" data-tab="voucher">04 · Travel Voucher<small>Company letterhead</small></button>
+<button class="nav" data-tab="records">05 · Saved Records<small>Bookings & backups</small></button>
+<button class="nav" data-tab="memory">06 · Memory & Storage<small>Local backup folder</small></button>
+</aside>
+<main class="content">
+<section id="tab-registration" class="tab">
+<div class="panel"><div class="heading"><div><h2>Pilgrim Registration</h2><p>Enter the main applicant once. Add family members and infants under the same booking.</p></div><span class="pill">STEP 1 OF 4</span></div>
+<div class="section-title">Main pilgrim details</div><div class="grid" id="mainFields"></div>
+<div class="section-title">Family members</div><div id="familyList"></div><button class="btn light" onclick="addPerson('family')">＋ Add family member</button>
+<div class="section-title">Infant details</div><div id="infantList"></div><button class="btn light" onclick="addPerson('infant')">＋ Add infant</button>
+<div class="actions" style="margin-top:22px"><button class="btn primary" onclick="saveAndGo('travel')">Save details & continue →</button></div>
+</div></section>
+<section id="tab-travel" class="tab hidden">
+<div class="panel"><div class="heading"><div><h2>Travel & Hotel Itinerary</h2><p>Travel duration is calculated from departure and return dates. Add each hotel stay with dates.</p></div><span class="pill">STEP 2 OF 4</span></div>
+<div class="section-title">Travel information</div><div class="grid" id="travelFields"></div>
+<div class="summary" style="margin:14px 0"><div class="stat"><span>Total travel days</span><b id="totalDays">—</b></div><div class="stat"><span>Total hotel nights</span><b id="totalNights">0</b></div><div class="stat"><span>Travellers</span><b id="travellerCount">1</b></div></div>
+<div class="section-title">Day-wise hotel bookings</div><div class="notice">Enter each stay with check-in/check-out dates. Distance is measured from the relevant Haram / Masjid, not between the two cities.</div>
+<div id="hotelList"></div><button class="btn light" onclick="addHotel()">＋ Add hotel stay</button>
+<div class="actions" style="margin-top:22px"><button class="btn primary" onclick="saveAndGo('costs')">Save itinerary & continue →</button></div>
+</div></section>
+<section id="tab-costs" class="tab hidden">
+<div class="panel"><div class="heading"><div><h2>Cost & Payment Management</h2><p>Admin-only costing. Quantity × rate calculates each line and the grand total.</p></div><span class="pill">STEP 3 OF 4</span></div>
+<div class="tablewrap"><table><thead><tr><th style="width:35%">Expense description</th><th>Qty</th><th>Rate (PKR)</th><th>Line total</th><th></th></tr></thead><tbody id="expenseRows"></tbody></table></div>
+<div class="actions" style="margin:12px 0"><button class="btn light" onclick="addExpense()">＋ Add expense row</button></div>
+<div class="grid" style="margin-top:18px">
+<div class="field"><label>Discount (PKR)</label><input id="discount" type="number" min="0" value="0" oninput="calcCosts()"></div>
+<div class="field"><label>Advance received (PKR)</label><input id="advance" type="number" min="0" value="0" oninput="calcCosts()"></div>
+<div class="field"><label>Payment status</label><select id="paymentStatus"><option>Unpaid</option><option>Partially Paid</option><option>Paid</option></select></div>
+<div class="field span3"><label>Payment notes / receipt reference</label><input id="paymentNotes" placeholder="Optional payment reference"></div></div>
+<div class="actions" style="margin-top:14px"><button class="btn gold" onclick="exportPaymentText()">Save payment details as TXT</button></div>
+<div class="summary" style="margin-top:16px"><div class="stat"><span>Subtotal</span><b id="subtotal">PKR 0</b></div><div class="stat"><span>Final package amount</span><b id="grandTotal">PKR 0</b></div><div class="stat"><span>Remaining balance</span><b id="balance">PKR 0</b></div></div>
+<div class="actions" style="margin-top:22px"><button class="btn primary" onclick="saveAndGo('voucher')">Save costing & continue →</button></div>
+</div></section>
+<section id="tab-voucher" class="tab hidden"><div class="panel"><div class="heading"><div><h2>Travel Voucher</h2><p>Review the booking and print a formal A4 voucher on Buraq Holidays letterhead.</p></div><span class="pill">STEP 4 OF 4</span></div>
+<div class="field"><label>Voucher number</label><input id="voucherNo" placeholder="BH-2026-0001"></div>
+<div class="field" style="margin-top:12px"><label>Terms & conditions (optional)</label><textarea id="terms">Please carry valid original travel documents. Hotel check-in and check-out are subject to the confirmed booking. Any changes are subject to availability and applicable charges.</textarea></div>
+<div class="actions" style="margin-top:16px"><button class="btn gold" onclick="saveRecord()">Save complete booking</button><button class="btn primary" onclick="printVoucher()">Print / Save voucher as PDF</button></div>
+<div class="notice">To create a PDF, choose “Save as PDF” in your browser’s print destination. Records are stored in this browser only.</div>
+</div></section>
+<section id="tab-records" class="tab hidden"><div class="panel"><div class="heading"><div><h2>Saved Bookings</h2><p>Records auto-save locally in this browser. Use Memory & Storage for a computer-folder backup.</p></div><button class="btn light btn-sm" onclick="exportBackup()">Export backup</button></div><div id="recordsList"></div><div style="margin-top:16px" class="field"><label>Import backup JSON</label><input type="file" accept=".json,application/json" onchange="importBackup(event)"></div></section>
+<section id="tab-memory" class="tab hidden"><div class="panel"><div class="heading"><div><h2>Local Memory & Backup Folder</h2><p>Keep a separate copy of bookings and the current draft on your own computer.</p></div><span class="pill" id="memoryStatus">Browser auto-save active</span></div>
+<div class="notice">Your records are automatically saved in this browser on this device. To also maintain a real folder on your computer, choose a folder below. Chrome and Edge support automatic folder syncing on HTTPS (GitHub Pages) or localhost. You must reconnect the folder after reopening the browser.</div>
+<div class="cardbox"><div class="cardhead"><strong>Computer memory folder</strong><span class="pill">Buraq Holidays Memory</span></div><p class="muted">Choose or create a folder named <b>Buraq Holidays Memory</b>. The system will write <b>buraq-memory.json</b> into it when you save or edit records.</p><div class="actions"><button class="btn primary" onclick="connectMemoryFolder()">Choose / Connect Memory Folder</button><button class="btn light" onclick="syncMemoryFolder()">Sync now</button><button class="btn gold" onclick="exportMemoryFile()">Download complete memory backup</button></div><p class="muted" id="folderStatus" style="margin-top:12px">No computer folder connected in this session.</p></div>
+<div class="cardbox"><div class="cardhead"><strong>Restore memory backup</strong></div><p class="muted">Select a previously downloaded <b>buraq-memory.json</b> file to restore saved bookings and the current draft.</p><div class="field"><label>Choose memory backup JSON</label><input type="file" accept=".json,application/json" onchange="importMemoryFile(event)"></div></div>
+<div class="cardbox"><strong>Where is the data stored?</strong><ul class="muted"><li><b>Browser storage:</b> automatically saved in this browser profile.</li><li><b>Computer folder:</b> an additional JSON backup in the folder you select.</li><li><b>GitHub Pages:</b> hosts the app files only; it does not store your customer records.</li><li><b>Other devices:</b> use the memory backup file to move records between devices.</li></ul></div>
+</div></section>
+ </main></div>
+</main></div><div class="footer">Buraq Holidays · Private admin tool · Keep a separate secure backup of your records</div></div>
+<div id="printArea"></div>
+<script>
+const $=id=>document.getElementById(id);
+const fieldsMain=[['name','Full name *','text'],['father','Father’s name','text'],['cnic','CNIC / ID number','text'],['passport','Passport number','text'],['dob','Date of birth','date'],['gender','Gender','select:Male,Female'],['phone','Contact number','tel'],['email','Email address','email'],['address','Residential address','text'],['passportIssue','Passport issue date','date'],['passportExpiry','Passport expiry date','date'],['relationship','Relationship / group reference','text']];
+const fieldsTravel=[['departure','Departure date','date'],['returnDate','Return date','date'],['airline','Airline','text'],['flightNo','Flight number','text'],['departureAirport','Departure airport','text'],['arrivalAirport','Arrival airport','text'],['package','Package name / type','text'],['visa','Visa details','text'],['transport','Transport details','text'],['bookingRef','Booking reference','text'],['notes','Travel notes','text']];
+let data={main:{},family:[],infants:[],travel:{},hotels:[],expenses:[],discount:0,advance:0,paymentStatus:'Unpaid',paymentNotes:'',voucherNo:'',terms:''};
+function fieldMarkup(f,prefix='main'){let [k,l,t]=f;let isSelect=t.startsWith('select:');let type=isSelect?'select':t;let obj=prefix.startsWith('family_')?data.family[+prefix.split('_')[1]]:prefix.startsWith('infant_')?data.infants[+prefix.split('_')[1]]:data[prefix];let val=(obj||{})[k]||'';if(isSelect){return '<div class="field"><label>'+l+'</label><select data-group="'+prefix+'" data-key="'+k+'"><option value="">Select</option>'+t.slice(7).split(',').map(x=>'<option '+(val===x?'selected':'')+'>'+x+'</option>').join('')+'</select></div>';}return '<div class="field"><label>'+l+'</label><input type="'+type+'" data-group="'+prefix+'" data-key="'+k+'" value="'+esc(val)+'" placeholder="'+l.replace(' *','')+'"></div>'; }
+function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function renderFields(){ $('mainFields').innerHTML=fieldsMain.map(f=>fieldMarkup(f)).join('');$('travelFields').innerHTML=fieldsTravel.map(f=>fieldMarkup(f,'travel')).join('');bindInputs();}
+function bindInputs(){document.querySelectorAll('[data-group]').forEach(el=>el.addEventListener('input',()=>{let g=el.dataset.group;if(g.startsWith('family_'))data.family[+g.split('_')[1]][el.dataset.key]=el.value;else if(g.startsWith('infant_'))data.infants[+g.split('_')[1]][el.dataset.key]=el.value;else data[g][el.dataset.key]=el.value;if(g==='travel'&&(el.dataset.key==='departure'||el.dataset.key==='returnDate'))calcDays();}));}
+function personMarkup(p,type,i){let infant=type==='infant';let defs=infant?[['name','Infant full name','text'],['father','Father’s name','text'],['mother','Mother’s name','text'],['dob','Date of birth','date'],['gender','Gender','select:Male,Female'],['passport','Passport number (if applicable)','text'],['relationship','Relationship to main pilgrim','text'],['phone','Guardian contact number','tel']]:[['name','Full name','text'],['father','Father’s name','text'],['cnic','CNIC / ID number','text'],['passport','Passport number','text'],['dob','Date of birth','date'],['gender','Gender','select:Male,Female'],['phone','Contact number','tel'],['relationship','Relationship to main pilgrim','text'],['passportExpiry','Passport expiry date','date']];return `<div class="cardbox"><div class="cardhead"><strong>${infant?'Infant':'Family member'} ${i+1}</strong><button class="btn danger btn-sm" onclick="removePerson('${type}',${i})">Remove</button></div><div class="grid">${defs.map(f=>{let [k,l,t]=f;return fieldMarkup(f,type+'_'+i)}).join('')}</div></div>`}
+function syncPersonInputs(){document.querySelectorAll('[data-group^="family_"],[data-group^="infant_"]').forEach(el=>el.addEventListener('input',()=>{let [type,index]=el.dataset.group.split('_');data[type][+index][el.dataset.key]=el.value;}))}
+function renderPeople(){ $('familyList').innerHTML=data.family.map((p,i)=>personMarkup(p,'family',i)).join('');$('infantList').innerHTML=data.infants.map((p,i)=>personMarkup(p,'infant',i)).join('');syncPersonInputs();}
+function addPerson(type){(type==='family'?data.family:data.infants).push({});renderPeople();calcDays();}
+function removePerson(type,i){(type==='family'?data.family:data.infants).splice(i,1);renderPeople();calcDays();}
+function addHotel(){data.hotels.push({city:'Makkah',hotel:'',address:'',checkin:'',checkout:'',room:'',rooms:1,distance:'',reference:''});renderHotels()}
+function renderHotels(){$('hotelList').innerHTML=data.hotels.map((h,i)=>`<div class="cardbox"><div class="cardhead"><strong>Hotel stay ${i+1}</strong><button class="btn danger btn-sm" onclick="data.hotels.splice(${i},1);renderHotels();calcDays()">Remove</button></div><div class="grid">
+<div class="field"><label>City</label><select onchange="data.hotels[${i}].city=this.value"><option ${h.city==='Makkah'?'selected':''}>Makkah</option><option ${h.city==='Madinah'?'selected':''}>Madinah</option><option ${h.city==='Jeddah'?'selected':''}>Jeddah</option><option ${h.city==='Other'?'selected':''}>Other</option></select></div>
+${[['hotel','Hotel name','text'],['address','Hotel address','text'],['checkin','Check-in','date'],['checkout','Check-out','date'],['room','Room type','text'],['rooms','Number of rooms','number'],['distance','Distance from Haram / Masjid (e.g. 450 m)','text'],['reference','Hotel confirmation number','text']].map(([k,l,t])=>`<div class="field"><label>${l}</label><input type="${t}" value="${esc(h[k]||'')}" ${t==='number'?'min="1"':''} oninput="data.hotels[${i}]['${k}']=this.value;calcDays()"></div>`).join('')}</div></div>`).join('');}
+function calcDays(){let a=data.travel.departure,b=data.travel.returnDate;let days=0;if(a&&b){let d=(new Date(b+'T00:00:00')-new Date(a+'T00:00:00'))/86400000;days=d>=0?Math.floor(d)+1:0;}$('totalDays').textContent=days?days+' days':'—';let nights=data.hotels.reduce((s,h)=>s+Math.max(0,Math.round((new Date((h.checkout||'')+'T00:00:00')-new Date((h.checkin||'')+'T00:00:00'))/86400000)||0),0);$('totalNights').textContent=nights;$('travellerCount').textContent=1+data.family.length+data.infants.length;}
+function addExpense(desc=''){data.expenses.push({desc,qty:1,rate:0});renderExpenses()}
+function renderExpenses(){$('expenseRows').innerHTML=data.expenses.map((e,i)=>`<tr><td><input value="${esc(e.desc)}" placeholder="Expense" oninput="data.expenses[${i}].desc=this.value"></td><td><input type="number" min="0" value="${e.qty}" oninput="data.expenses[${i}].qty=this.value;calcCosts()"></td><td><input type="number" min="0" value="${e.rate}" oninput="data.expenses[${i}].rate=this.value;calcCosts()"></td><td id="line${i}">PKR ${(Number(e.qty)*Number(e.rate)).toLocaleString('en-PK')}</td><td><button class="btn danger btn-sm" onclick="data.expenses.splice(${i},1);renderExpenses();calcCosts()">×</button></td></tr>`).join('');calcCosts()}
+const money=n=>'PKR '+Math.round(Number(n)||0).toLocaleString('en-PK');
+function calcCosts(){let sub=data.expenses.reduce((s,e)=>s+(Number(e.qty)||0)*(Number(e.rate)||0),0);let disc=Number($('discount')?.value??data.discount)||0,adv=Number($('advance')?.value??data.advance)||0;data.discount=disc;data.advance=adv;data.paymentStatus=$('paymentStatus')?.value||data.paymentStatus;data.paymentNotes=$('paymentNotes')?.value||'';$('subtotal').textContent=money(sub);$('grandTotal').textContent=money(Math.max(0,sub-disc));$('balance').textContent=money(Math.max(0,sub-disc-adv));data.subtotal=sub;data.total=Math.max(0,sub-disc);data.balance=Math.max(0,sub-disc-adv);data.expenses.forEach((e,i)=>{let el=$('line'+i);if(el)el.textContent=money(Number(e.qty)*Number(e.rate))})}
+function exportPaymentText(){
+  collect();
+  const lines=[
+    'BURAQ HOLIDAYS — PAYMENT SUMMARY',
+    '================================',
+    'Booking / Voucher: '+(data.voucherNo||'Not assigned'),
+    'Customer: '+(data.main.name||'Not entered'),
+    'Contact: '+(data.main.phone||'Not entered'),
+    'Date exported: '+new Date().toLocaleString(),
+    '',
+    'EXPENSE BREAKDOWN',
+    '-----------------',
+    ...data.expenses.map((e,i)=>(i+1)+'. '+(e.desc||'Expense')+' | Qty: '+e.qty+' | Rate: '+money(e.rate)+' | Total: '+money((Number(e.qty)||0)*(Number(e.rate)||0))),
+    '',
+    'PAYMENT TOTALS',
+    '--------------',
+    'Subtotal: '+money(data.subtotal),
+    'Discount: '+money(data.discount),
+    'Total payment / package amount: '+money(data.total),
+    'Amount received (advance): '+money(data.advance),
+    'Remaining balance: '+money(data.balance),
+    'Payment status: '+(data.paymentStatus||'Unpaid'),
+    'Payment notes / receipt reference: '+(data.paymentNotes||'—'),
+    '',
+    'Internal payment record. Payment figures are excluded from the printable travel voucher.'
+  ];
+  downloadBlob(new Blob([lines.join('\\r\\n')],{type:'text/plain;charset=utf-8'}),'Buraq-Payment-'+(data.voucherNo||'summary')+'.txt');
+}
+
+function people(){return [{...data.main,kind:'Main Pilgrim',relationship:'Main Pilgrim'},...data.family.map(p=>({...p,kind:'Family Member'})),...data.infants.map(p=>({...p,kind:'Infant'}))]}
+function nav(tab){document.querySelectorAll('.tab').forEach(x=>x.classList.add('hidden'));$('tab-'+tab).classList.remove('hidden');document.querySelectorAll('.nav').forEach(x=>x.classList.toggle('active',x.dataset.tab===tab));if(tab==='records')renderRecords();if(tab==='voucher'){$('voucherNo').value=data.voucherNo||'';$('terms').value=data.terms||'';}}
+document.querySelectorAll('.nav').forEach(b=>b.onclick=()=>nav(b.dataset.tab));
+function saveAndGo(tab){collect();saveDraft();nav(tab)}
+function collect(){document.querySelectorAll('[data-group]').forEach(el=>{let g=el.dataset.group,k=el.dataset.key;if(g.startsWith('family_'))data.family[+g.split('_')[1]][k]=el.value;else if(g.startsWith('infant_'))data.infants[+g.split('_')[1]][k]=el.value;else data[g][k]=el.value});data.voucherNo=$('voucherNo').value;data.terms=$('terms').value;calcCosts();}
+function saveDraft(){collect();localStorage.setItem('buraq_draft',JSON.stringify(data))}
+function saveRecord(){collect();if(!data.main.name){alert('Please enter the main pilgrim name first.');nav('registration');return}data.voucherNo=$('voucherNo').value||'BH-'+new Date().getFullYear()+'-'+Date.now().toString().slice(-6);$('voucherNo').value=data.voucherNo;let records=JSON.parse(localStorage.getItem('buraq_records')||'[]');let ix=records.findIndex(r=>r.voucherNo===data.voucherNo);if(ix>=0)records[ix]=JSON.parse(JSON.stringify(data));else records.unshift(JSON.parse(JSON.stringify(data)));localStorage.setItem('buraq_records',JSON.stringify(records));saveDraft();alert('Booking saved in this browser.');}
+function loadRecord(i){let r=JSON.parse(localStorage.getItem('buraq_records')||'[]')[i];if(!r)return;data=r;init();nav('registration');}
+function deleteRecord(i){if(!confirm('Delete this saved booking?'))return;let r=JSON.parse(localStorage.getItem('buraq_records')||'[]');r.splice(i,1);localStorage.setItem('buraq_records',JSON.stringify(r));renderRecords()}
+function renderRecords(){let r=JSON.parse(localStorage.getItem('buraq_records')||'[]');$('recordsList').innerHTML=r.length?r.map((x,i)=>`<div class="record"><div><b>${esc(x.main?.name||'Unnamed')} · ${esc(x.voucherNo||'No voucher no.')}</b><span class="muted">${esc(x.travel?.departure||'')} → ${esc(x.travel?.returnDate||'')} · ${money(x.total||0)}</span></div><div class="actions"><button class="btn light btn-sm" onclick="loadRecord(${i})">Open</button><button class="btn danger btn-sm" onclick="deleteRecord(${i})">Delete</button></div></div>`).join(''):'<p class="muted">No saved bookings yet.</p>'}
+function exportBackup(){let blob=new Blob([localStorage.getItem('buraq_records')||'[]'],{type:'application/json'});downloadBlob(blob,'buraq-holidays-backup.json')}
+function importBackup(e){let f=e.target.files[0];if(!f)return;let rd=new FileReader();rd.onload=()=>{try{let incoming=JSON.parse(rd.result);if(!Array.isArray(incoming))throw 0;localStorage.setItem('buraq_records',JSON.stringify(incoming));renderRecords();alert('Backup imported.')}catch{alert('Invalid backup file.')}};rd.readAsText(f)}
+function downloadBlob(blob,name){let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();URL.revokeObjectURL(a.href)}
+function logo(){return $('brandLogo').src}
+function printVoucher(){collect();let ps=people(),hotels=data.hotels.map(h=>`<tr><td>${esc(h.city)}</td><td>${esc(h.hotel)}</td><td>${esc(h.checkin)}</td><td>${esc(h.checkout)}</td><td>${esc(h.room)}</td><td>${esc(h.distance)}</td></tr>`).join('');let costs=data.expenses.map(e=>`<tr><td>${esc(e.desc)}</td><td>${esc(e.qty)}</td><td>${money(e.rate)}</td><td>${money(Number(e.qty)*Number(e.rate))}</td></tr>`).join('');$('printArea').innerHTML=`<article class="voucher"><header class="vhead"><img src="${logo()}"><div><h1>BURAQ HOLIDAYS</h1><p>TRAVEL & PILGRIM SERVICES</p><small>OFFICIAL TRAVEL VOUCHER</small></div><b>${esc(data.voucherNo||'—')}</b></header><div class="vtitle">PILGRIM TRAVEL VOUCHER</div><h3>Primary pilgrim details</h3><div class="vgrid">${[['Name',data.main.name],['Father’s Name',data.main.father],['CNIC',data.main.cnic],['Passport',data.main.passport],['Contact',data.main.phone],['Email',data.main.email]].map(([a,b])=>`<div><small>${a}</small><b>${esc(b||'—')}</b></div>`).join('')}</div><h3>Travelling persons</h3><table><tr><th>Name</th><th>Category</th><th>Passport</th><th>Relationship</th></tr>${ps.map(p=>`<tr><td>${esc(p.name||'—')}</td><td>${esc(p.kind)}</td><td>${esc(p.passport||'—')}</td><td>${esc(p.relationship||'—')}</td></tr>`).join('')}</table><h3>Travel itinerary</h3><div class="vgrid">${[['Departure',data.travel.departure],['Return',data.travel.returnDate],['Total days',travelDays()+' days'],['Airline',data.travel.airline],['Flight no.',data.travel.flightNo],['Route',`${data.travel.departureAirport||'—'} → ${data.travel.arrivalAirport||'—'}`],['Package',data.travel.package],['Visa',data.travel.visa],['Transport',data.travel.transport]].map(([a,b])=>`<div><small>${a}</small><b>${esc(b||'—')}</b></div>`).join('')}</div><h3>Hotel bookings</h3><table><tr><th>City</th><th>Hotel</th><th>Check-in</th><th>Check-out</th><th>Room</th><th>Distance</th></tr>${hotels||'<tr><td colspan="6">No hotel stays entered.</td></tr>'}</table><h3>Terms & conditions</h3><p class="terms">${esc(data.terms||'—')}</p><div class="sign"><div>Client signature</div><div>Authorized signature & stamp<br><b>Buraq Holidays</b></div></div><footer>Thank you for choosing Buraq Holidays. Please retain this voucher for your records.</footer></article>`;printNow()}
+function travelDays(){let a=data.travel.departure,b=data.travel.returnDate;if(!a||!b)return '—';return Math.max(0,Math.floor((new Date(b+'T00:00:00')-new Date(a+'T00:00:00'))/86400000)+1)}
+function printNow(){document.body.classList.add('printing');window.print();setTimeout(()=>{$('printArea').innerHTML='';document.body.classList.remove('printing')},500)}
+function init(){renderFields();renderPeople();renderHotels();renderExpenses();$('discount').value=data.discount||0;$('advance').value=data.advance||0;$('paymentStatus').value=data.paymentStatus||'Unpaid';$('paymentNotes').value=data.paymentNotes||'';$('voucherNo').value=data.voucherNo||'';$('terms').value=data.terms||'';calcDays();calcCosts();}
+const saved=localStorage.getItem('buraq_draft');if(saved){try{data=Object.assign(data,JSON.parse(saved))}catch{}}
+init();if(!data.hotels.length)addHotel();if(!data.expenses.length){['Makkah hotel','Madinah hotel','Air ticket','Visa','Transport','Other expenses'].forEach(x=>addExpense(x))}
+
+// Local memory: browser auto-save plus optional user-selected computer folder.
+let memoryDirectoryHandle = null;
+function memoryPayload(){
+  collect();
+  return {app:'Buraq Holidays',formatVersion:1,exportedAt:new Date().toISOString(),draft:data,records:JSON.parse(localStorage.getItem('buraq_records')||'[]')};
+}
+function setMemoryStatus(message){const el=$('folderStatus');if(el)el.textContent=message;}
+async function connectMemoryFolder(){
+  if(!window.showDirectoryPicker){alert('Folder syncing is not supported in this browser. Please use Chrome or Edge on GitHub Pages (HTTPS), or use Download complete memory backup.');return;}
+  try{
+    memoryDirectoryHandle=await window.showDirectoryPicker({id:'buraq-holidays-memory',mode:'readwrite'});
+    await writeMemoryFile();
+    setMemoryStatus('Connected: '+memoryDirectoryHandle.name+' · buraq-memory.json is being kept up to date.');
+    $('memoryStatus').textContent='Computer folder connected';
+  }catch(err){if(err.name!=='AbortError')alert('Could not connect folder: '+err.message);}
+}
+async function writeMemoryFile(){
+  if(!memoryDirectoryHandle)return;
+  try{
+    const handle=await memoryDirectoryHandle.getFileHandle('buraq-memory.json',{create:true});
+    const writable=await handle.createWritable();
+    await writable.write(JSON.stringify(memoryPayload(),null,2));
+    await writable.close();
+    setMemoryStatus('Last synced: '+new Date().toLocaleString()+' · '+memoryDirectoryHandle.name+'/buraq-memory.json');
+    if($('memoryStatus'))$('memoryStatus').textContent='Memory folder synced';
+  }catch(err){setMemoryStatus('Folder sync needs permission. Click Sync now or reconnect the folder.');}
+}
+async function syncMemoryFolder(){if(!memoryDirectoryHandle){await connectMemoryFolder();return;}await writeMemoryFile();}
+function exportMemoryFile(){const payload=memoryPayload();downloadBlob(new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}),'buraq-memory.json');}
+function importMemoryFile(event){
+  const file=event.target.files&&event.target.files[0];if(!file)return;
+  const reader=new FileReader();reader.onload=()=>{try{
+    const incoming=JSON.parse(reader.result);
+    if(Array.isArray(incoming)){localStorage.setItem('buraq_records',JSON.stringify(incoming));}
+    else if(incoming&&incoming.app==='Buraq Holidays'){
+      if(!Array.isArray(incoming.records)||!incoming.draft)throw new Error('Backup structure is incomplete.');
+      localStorage.setItem('buraq_records',JSON.stringify(incoming.records));
+      localStorage.setItem('buraq_draft',JSON.stringify(incoming.draft));
+      data=Object.assign(data,incoming.draft);init();
+    }else throw new Error('This is not a Buraq Holidays memory backup.');
+    renderRecords();alert('Memory backup restored successfully.');
+  }catch(err){alert('Could not restore backup: '+err.message);}event.target.value='';};reader.readAsText(file);
+}
+let autoSaveQueued=false;
+function autoSaveLocal(){
+  try{collect();localStorage.setItem('buraq_draft',JSON.stringify(data));
+    if($('memoryStatus'))$('memoryStatus').textContent='Auto-saved in browser';
+    if(memoryDirectoryHandle&&!autoSaveQueued){autoSaveQueued=true;setTimeout(async()=>{autoSaveQueued=false;await writeMemoryFile();},900);}
+  }catch(err){console.warn('Buraq auto-save:',err);}
+}
+document.addEventListener('input',e=>{if(e.target.closest('.app'))autoSaveLocal();});
+document.addEventListener('change',e=>{if(e.target.closest('.app'))autoSaveLocal();});
+document.addEventListener('click',e=>{if(e.target.closest('.app button'))autoSaveLocal();});
+
+</script>
+<style>
+.voucher{max-width:900px;margin:0 auto;color:#243746;font:12px/1.45 Arial,sans-serif}.vhead{display:flex;align-items:center;gap:16px;border-bottom:3px solid #c79a45;padding:0 0 14px}.vhead img{width:80px;height:80px;object-fit:contain}.vhead h1{margin:0;color:#102b43;font-size:23px;letter-spacing:1px}.vhead p{margin:3px 0;color:#6e7b85;letter-spacing:2px;font-size:10px}.vhead small{color:#b58a3c;font-weight:bold;letter-spacing:1px}.vhead>b{margin-left:auto;color:#102b43}.vtitle{text-align:center;font-size:17px;letter-spacing:1px;font-weight:bold;margin:18px 0;color:#102b43}.voucher h3{color:#1b4965;border-bottom:1px solid #dfe6eb;padding-bottom:5px;margin:17px 0 9px;font-size:12px;text-transform:uppercase;letter-spacing:.6px}.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px 15px}.vgrid>div{border-bottom:1px solid #edf0f2;padding:4px 0}.vgrid small{display:block;color:#7b8993;font-size:9px}.vgrid b{display:block;font-size:11px;margin-top:2px}.voucher table{width:100%;border-collapse:collapse;min-width:0}.voucher th,.voucher td{border:1px solid #e1e7eb;padding:7px;text-align:left;font-size:10px}.voucher th{background:#edf3f6;color:#24445a}.amounts{margin:12px 0 0 auto;width:320px}.amounts div{display:flex;justify-content:space-between;padding:5px;border-bottom:1px solid #edf0f2}.amounts .due{background:#edf3f6;color:#102b43;font-weight:bold}.terms{font-size:10px;color:#586873}.sign{display:flex;justify-content:space-between;margin:35px 20px 15px}.sign div{border-top:1px solid #78858e;padding-top:7px;width:190px;text-align:center;font-size:10px}.voucher footer{text-align:center;border-top:1px solid #c79a45;padding-top:10px;color:#73818a;font-size:10px}
+@media print{ @page{size:A4;margin:12mm}body.printing #printArea{display:block!important}.voucher{max-width:none}}
+</style>
+</body></html>
